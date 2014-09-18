@@ -2,6 +2,7 @@
 /**
  * Login Class
  */
+
 function Login() {
 	// sessionId -> user map
 	this.sessionMap = {
@@ -33,7 +34,6 @@ Login.prototype.login = function(_name, _email) {
 	this.sessionMap[sessionId] = { name: _name, email: _email } 
 	
 	console.log('new session id ' + sessionId + ' for login::' + _email);
-	
 	return sessionId;
 };
 
@@ -42,6 +42,9 @@ Login.prototype.login = function(_name, _email) {
  */ 
 Login.prototype.logout = function(sessionId) {
 	console.log('logout::' + sessionId);
+	if ( sessionId in this.sessionMap) {
+		delete this.sessionMap[sessionId];
+	}
    /*
 	* TODO: Remove the given sessionId from the sessionMap
 	*/
