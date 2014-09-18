@@ -81,7 +81,6 @@ function put(request, response) {
 			  name  : login.sessionMap[oldSessionId]['name'], 
 			  email : login.sessionMap[oldSessionId]['email']
 		    }
-			response.setHeader('Set-Cookie', 'session_id=' + newSessionId);
 			console.log('new session id:' + newSessionId);
 			delete login.sessionMap[oldSessionId];
 			response.setHeader('Set-Cookie', 'session_id=' + newSessionId);
